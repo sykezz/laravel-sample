@@ -15,7 +15,7 @@ class MyControllerTest extends TestCase
     {
         $response = $this->json('GET', '/test');
 
-        $response->assertStatus(201)
+        $response->assertStatus(200)
             ->assertJson([
                 'message' => 'Hello World'
             ]);
