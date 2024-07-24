@@ -16,8 +16,8 @@ services:
     networks:
       - app-network
     command: >
-      sh -c "chmod -R 775 /var/www/storage /var/www/bootstrap/cache &&
-             php artisan migrate &&
+      sh -c "chmod -R 777 /var/www/storage /var/www/bootstrap/cache &&
+             php artisan migrate --force &&
              php-fpm"
 
   webserver:
