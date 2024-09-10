@@ -35,4 +35,4 @@ RUN chmod -R 775 /var/www/storage \
     && chmod -R 775 /var/www/bootstrap/cache
 
 EXPOSE 9000
-CMD ["php-fpm"
+CMD ["php-fpm"]
