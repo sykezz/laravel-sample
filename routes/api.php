@@ -14,5 +14,4 @@ Route::delete('/test/{id}', 'App\Http\Controllers\MyController@destroy');
 
 Route::group(['prefix' => 'v2', 'namespace' => 'App\Http\Controllers\V2'], function () {
     Route::get('/test', 'MyController@index');
-    Route::post('/test', 'MyController@store');
 });
