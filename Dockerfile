@@ -27,12 +27,9 @@ RUN docker-php-ext-configure gd --with-external-gd && \
 COPY --from=composer:latest /usr/bin/composer /usr/local/bin/composer
 COPY . /var/www
 RUN composer install --no-interaction --prefer-dist --optimize-autoloader
-#RUN chmod -R 775 /var/www/storage \
-#    && chmod -R 775 /var/www/bootstrap/cache
-#COPY --chown=www:www . /var/www
-#USER www
+
 RUN chmod -R 775 /var/www/storage \
     && chmod -R 775 /var/www/bootstrap/cache
 
 EXPOSE 9000
-CMD ["php-fpm"
+CMD ["php-fpm"]
