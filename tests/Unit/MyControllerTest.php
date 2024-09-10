@@ -20,7 +20,7 @@ class MyControllerTest extends TestCase
 
     public function testStore()
     {
-        $response = $this->json('POST', '/api/v1/test', [
+        $response = $this->json('POST', '/api/test', [
             'name' => 'John Doe',
             'email' => 'test@example.com'
         ]);
