@@ -12,18 +12,4 @@ class MyController extends Controller
             'message' => 'Hello World'
         ], 200);
     }
-
-    public function store(Request $request)
-    {
-        $request->validate([
-            'name' => 'required|string',
-            'email' => 'required|email',
-        ]);
-
-        // Save to database
-
-        return response()->json([
-            'message' => "User {$request->name} created!"
-        ], 201);
-    }
 }
