@@ -2,8 +2,6 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class MyControllerTest extends TestCase
@@ -27,6 +25,29 @@ class MyControllerTest extends TestCase
         $response->assertStatus(201)
             ->assertJson([
                 'message' => 'User John Doe created!'
+            ]);
+    }
+
+    public function testUpdate()
+    {
+        $response = $this->json('PUT', '/api/test/1', [
+            'name' => 'Jane Doe',
+            'email' => 'jane@example.com'
+        ]);
+
+        $response->assertStatus(200)
+            ->assertJson([
+                'message' => 'User Jane Doe updated!'
+            ]);
+    }
+
+    public function testDestroy()
+    {
+        $response = $this->json('DELETE', '/api/test/1');
+
+        $response->assertStatus(200)
+            ->assertJson([
+                'message' => 'User deleted!'
             ]);
     }
 }

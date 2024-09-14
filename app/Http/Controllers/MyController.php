@@ -49,4 +49,14 @@ class MyController extends Controller
             'message' => 'User deleted!'
         ], 200);
     }
+
+    public function foodMenu()
+    {
+        return response()->json([
+            'message' => 'This is a test',
+            'data' => [
+                'menu' => 'Nasi Goreng Ayam',
+                'price' => 12]
+        ], 200);
+    }
 }

@@ -11,6 +11,7 @@ Route::get('/test', 'App\Http\Controllers\MyController@index');
 Route::post('/test', 'App\Http\Controllers\MyController@store');
 Route::post('/test/{id}', 'App\Http\Controllers\MyController@update');
 Route::delete('/test/{id}', 'App\Http\Controllers\MyController@destroy');
+Route::get('/test/menu', 'App\Http\Controllers\MyController@foodMenu');
 
 Route::group(['prefix' => 'v2', 'namespace' => 'App\Http\Controllers\V2'], function () {
     Route::get('/test', 'MyController@index');
