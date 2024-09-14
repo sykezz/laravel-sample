@@ -30,7 +30,7 @@ class MyControllerTest extends TestCase
 
     public function testUpdate()
     {
-        $response = $this->json('PUT', '/api/test/1', [
+        $response = $this->json('POST', '/api/test/1', [
             'name' => 'Jane Doe',
             'email' => 'jane@example.com'
         ]);
